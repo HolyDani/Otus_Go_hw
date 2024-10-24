@@ -5,10 +5,10 @@ import "fmt"
 func main() {
 	var size int
 	var board string
-	fmt.Println("Enter size of board: ")
+	fmt.Println("Enter size of board more than 0: ")
 	fmt.Scan(&size)
-	if size == 0 {
-		fmt.Println("You enter zero value")
+	if size <= 0 {
+		fmt.Println("You enter wrong value")
 		return
 	}
 

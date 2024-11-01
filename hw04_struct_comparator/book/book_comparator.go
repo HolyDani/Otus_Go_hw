@@ -3,27 +3,23 @@ package book
 import "fmt"
 
 type Compare struct {
-	book1  Book
-	book2  Book
 	option int
 }
 
-func BuildCompare(b1, b2 *Book, opt int) *Compare {
-	return &Compare{
-		book1:  *b1,
-		book2:  *b2,
+func MakeCompare(opt int) Compare {
+	return Compare{
 		option: opt,
 	}
 }
 
-func (comp Compare) CompareBooks() bool {
+func (comp Compare) CompareBooks(b1, b2 *Book) bool {
 	switch comp.option {
 	case 1:
-		return comp.book1.GetYear() > comp.book2.GetYear()
+		return b1.GetYear() > b2.GetYear()
 	case 2:
-		return comp.book1.GetSize() > comp.book2.GetSize()
+		return b1.GetSize() > b2.GetSize()
 	case 3:
-		return comp.book1.GetRate() > comp.book2.GetRate()
+		return b1.GetRate() > b2.GetRate()
 	default:
 		fmt.Println("INCORRECT COMPARE!")
 	}

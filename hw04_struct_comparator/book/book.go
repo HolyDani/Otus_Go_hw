@@ -43,3 +43,27 @@ func (b Book) GetTitle() string {
 func (b Book) GetAuthor() string {
 	return b.author
 }
+
+func (b *Book) SetID(id uint) {
+	b.id = id
+}
+
+func (b *Book) SetSize(size uint) {
+	b.size = size
+}
+
+func (b *Book) SetYear(year uint) {
+	b.year = year
+}
+
+func (b *Book) SetRate(rate float32) {
+	b.rate = rate
+}
+
+func (b *Book) SetTitle(title string) {
+	b.title = title
+}
+
+func (b *Book) SetAuthor(author string) {
+	b.author = author
+}

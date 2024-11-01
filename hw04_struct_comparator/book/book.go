@@ -20,28 +20,28 @@ func NewBook(newID, newYear, newSize uint, newRate float32, newAuthor, newTitle 
 	}
 }
 
-func (b Book) GetID() uint {
-	return b.id
+func (b *Book) ID() *uint {
+	return &b.id
 }
 
-func (b Book) GetYear() uint {
-	return b.year
+func (b *Book) Year() *uint {
+	return &b.year
 }
 
-func (b Book) GetSize() uint {
-	return b.size
+func (b *Book) Size() *uint {
+	return &b.size
 }
 
-func (b Book) GetRate() float32 {
-	return b.rate
+func (b *Book) Rate() *float32 {
+	return &b.rate
 }
 
-func (b Book) GetTitle() string {
-	return b.title
+func (b *Book) Title() *string {
+	return &b.title
 }
 
-func (b Book) GetAuthor() string {
-	return b.author
+func (b *Book) Author() *string {
+	return &b.author
 }
 
 func (b *Book) SetID(id uint) {

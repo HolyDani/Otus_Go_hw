@@ -15,11 +15,11 @@ func MakeCompare(opt int) Compare {
 func (comp Compare) CompareBooks(b1, b2 *Book) bool {
 	switch comp.option {
 	case 1:
-		return b1.GetYear() > b2.GetYear()
+		return *b1.Year() > *b2.Year()
 	case 2:
-		return b1.GetSize() > b2.GetSize()
+		return *b1.Size() > *b2.Size()
 	case 3:
-		return b1.GetRate() > b2.GetRate()
+		return *b1.Rate() > *b2.Rate()
 	default:
 		fmt.Println("INCORRECT COMPARE!")
 	}

@@ -1,6 +1,7 @@
 package circle
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -16,6 +17,10 @@ func NewCircle(r float64) Circle {
 
 func (c Circle) Area() float64 {
 	return math.Pi * (c.radius * c.radius)
+}
+
+func (c Circle) Info(res float64) string {
+	return fmt.Sprintf("Круг: радиус %v\nПлощадь: %v\n", c.Radius(), res)
 }
 
 func (c Circle) Radius() float64 {

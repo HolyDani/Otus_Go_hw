@@ -18,21 +18,21 @@ func main() {
 	if err != nil {
 		fmt.Printf("Ошибка: %s\n", err)
 	} else {
-		fmt.Printf("Круг: радиус %v\nПлощадь: %v\n\n", circle1.Radius(), res)
+		fmt.Println(printInfo(circle1, res))
 	}
 
 	res, err = calculateArea(rectangle1)
 	if err != nil {
 		fmt.Printf("Ошибка: %s\n", err)
 	} else {
-		fmt.Printf("Прямоугольник: ширина %v, высота %v\nПлощадь: %v\n\n", rectangle1.Width(), rectangle1.Height(), res)
+		fmt.Println(printInfo(rectangle1, res))
 	}
 
 	res, err = calculateArea(triangle1)
 	if err != nil {
 		fmt.Printf("Ошибка: %s\n", err)
 	} else {
-		fmt.Printf("Треугольник: основание %v, высота %v\nПлощадь: %v\n\n", triangle1.Base(), triangle1.Height(), res)
+		fmt.Println(printInfo(triangle1, res))
 	}
 }
 
@@ -41,4 +41,8 @@ func calculateArea(s shapes.Shape) (float64, error) {
 		return 0, errors.New("переданный объект не является фигурой")
 	}
 	return s.Area(), nil
+}
+
+func printInfo(s shapes.Shape, res float64) string {
+	return s.Info(res)
 }

@@ -5,12 +5,26 @@ import (
 	"math"
 	"testing"
 
-	shapes "github.com/Otus_hw/HolyDani/hw05_shapes/interface"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/circle"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/rectangle"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/triangle"
+	shapes "github.com/Otus_hw/HolyDani/hw06_testing/hw05/interface"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/circle"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/rectangle"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/triangle"
 	"github.com/stretchr/testify/assert"
 )
+
+type emptyShape struct{}
+
+func (e emptyShape) Area() float64 {
+	return 0
+}
+
+func (e emptyShape) Info(_ float64) string {
+	return ""
+}
+
+func (e emptyShape) IsValid() bool {
+	return false
+}
 
 func TestCalculateArea(t *testing.T) {
 	tests := []struct {
@@ -34,7 +48,7 @@ func TestCalculateArea(t *testing.T) {
 			expectedErr:  nil,
 		},
 		{
-			shape:        nil,
+			shape:        emptyShape{},
 			expectedArea: 0,
 			expectedErr:  errors.New("переданный объект не является фигурой"),
 		},

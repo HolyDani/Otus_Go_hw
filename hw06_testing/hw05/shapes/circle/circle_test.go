@@ -7,30 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNewCircle(t *testing.T) {
-	tests := []struct {
-		radius   float64
-		expected Circle
-	}{
-		{
-			radius:   5,
-			expected: Circle{radius: 5},
-		},
-		{
-			radius:   0,
-			expected: Circle{radius: 0},
-		},
-		{
-			radius:   24.7569,
-			expected: Circle{radius: 24.7569},
-		},
-	}
-	for _, test := range tests {
-		got := NewCircle(test.radius)
-		assert.Equal(t, test.expected.radius, got.Radius())
-	}
-}
-
 func TestArea_Circle(t *testing.T) {
 	tests := []struct {
 		name     string

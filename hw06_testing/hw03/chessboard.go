@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var size int
@@ -20,16 +23,16 @@ func GenerateBoard(size int) string {
 		return ""
 	}
 
-	var board string
+	var board strings.Builder
 	for i := 0; i < size; i++ {
 		for j := 0; j < size; j++ {
 			if (i+j)%2 == 0 {
-				board += "#"
+				board.WriteString("#")
 			} else {
-				board += " "
+				board.WriteString(" ")
 			}
 		}
-		board += "\n"
+		board.WriteString("\n")
 	}
-	return board
+	return board.String()
 }

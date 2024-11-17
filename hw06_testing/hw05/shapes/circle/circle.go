@@ -26,3 +26,7 @@ func (c Circle) Info(res float64) string {
 func (c Circle) Radius() float64 {
 	return c.radius
 }
+
+func (c Circle) IsValid() bool {
+	return c.radius > 0
+}

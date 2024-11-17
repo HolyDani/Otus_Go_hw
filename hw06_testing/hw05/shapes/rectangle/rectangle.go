@@ -29,3 +29,7 @@ func (r Rectangle) Width() float64 {
 func (r Rectangle) Height() float64 {
 	return r.height
 }
+
+func (r Rectangle) IsValid() bool {
+	return r.width > 0 && r.height > 0
+}

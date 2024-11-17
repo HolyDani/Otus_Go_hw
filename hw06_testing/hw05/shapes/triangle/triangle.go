@@ -22,6 +22,10 @@ func (t Triangle) Info(res float64) string {
 	return fmt.Sprintf("Треугольник: основание %v, высота %v\nПлощадь: %v\n", t.Base(), t.Height(), res)
 }
 
+func (t Triangle) IsValid() bool {
+	return t.base > 0 && t.height > 0
+}
+
 func (t Triangle) Base() float64 {
 	return t.base
 }

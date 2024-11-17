@@ -4,10 +4,10 @@ import (
 	"errors"
 	"fmt"
 
-	shapes "github.com/Otus_hw/HolyDani/hw05_shapes/interface"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/circle"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/rectangle"
-	"github.com/Otus_hw/HolyDani/hw05_shapes/shapes/triangle"
+	shapes "github.com/Otus_hw/HolyDani/hw06_testing/hw05/interface"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/circle"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/rectangle"
+	"github.com/Otus_hw/HolyDani/hw06_testing/hw05/shapes/triangle"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 }
 
 func calculateArea(s shapes.Shape) (float64, error) {
-	if s == nil {
+	if s == nil || !s.IsValid() {
 		return 0, errors.New("переданный объект не является фигурой")
 	}
 	return s.Area(), nil

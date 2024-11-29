@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-func BinarySearch(item int, arr []int) bool {
+func BinarySearch(item int, arr []int) int {
 	if len(arr) < 1 {
-		return false
+		return -1
 	}
 	lowBound := 0
 	highBound := len(arr) - 1
@@ -12,7 +12,7 @@ func BinarySearch(item int, arr []int) bool {
 	for lowBound <= highBound {
 		middle := (lowBound + highBound) / 2
 		if arr[middle] == item {
-			return true
+			return middle
 		}
 		if arr[middle] > item {
 			highBound = middle - 1
@@ -20,7 +20,7 @@ func BinarySearch(item int, arr []int) bool {
 			lowBound = middle + 1
 		}
 	}
-	return false
+	return -1
 }
 
 func Qsort(arr []int) []int {

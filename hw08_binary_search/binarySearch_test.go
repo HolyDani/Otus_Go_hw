@@ -10,27 +10,27 @@ func TestBinarySearch(t *testing.T) {
 	tests := []struct {
 		sl             []int
 		item           int
-		expectedResult bool
+		expectedResult int
 	}{
 		{
 			sl:             []int{1, 5, 8, 12, 25},
 			item:           12,
-			expectedResult: true,
+			expectedResult: 3,
 		},
 		{
 			sl:             []int{1, 5, 8, 12, 25},
 			item:           13,
-			expectedResult: false,
+			expectedResult: -1,
 		},
 		{
 			sl:             []int{},
 			item:           5,
-			expectedResult: false,
+			expectedResult: -1,
 		},
 		{
 			sl:             []int{5, 9, 4, 7, 1},
 			item:           9,
-			expectedResult: true,
+			expectedResult: 4,
 		},
 	}
 	for _, test := range tests {

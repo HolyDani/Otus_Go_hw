@@ -1,6 +1,6 @@
 module github.com/HolyDani/Otus_Go_hw/hw09_serialize
 
-go 1.20
+go 1.21
 
 toolchain go1.23.2
 

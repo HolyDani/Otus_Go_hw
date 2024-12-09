@@ -1,6 +1,6 @@
 module github.com/HolyDani/Otus_Go_hw/hw09_serialize
 
-go 1.21
+go 1.20
 
 require (
 	github.com/vmihailenco/msgpack v4.0.4+incompatible

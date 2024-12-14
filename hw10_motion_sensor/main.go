@@ -9,19 +9,17 @@ import (
 
 func RandIntPush(buf chan<- int) {
 	t := time.After(60 * time.Second)
-wait:
 	for {
+		n, err := rand.Int(rand.Reader, big.NewInt(100))
+		if err != nil {
+			fmt.Println("Error generating random number:", err)
+			continue
+		}
 		select {
 		case <-t:
 			close(buf)
-			break wait
-		default:
-			n, err := rand.Int(rand.Reader, big.NewInt(100))
-			if err != nil {
-				fmt.Println("Error generating random number:", err)
-				continue
-			}
-			buf <- int(n.Int64())
+			return
+		case buf <- int(n.Int64()):
 		}
 	}
 }

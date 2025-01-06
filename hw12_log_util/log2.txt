@@ -1,0 +1,5 @@
+Log: info: test3 ok
+Log: info: test4 ok
+Log: warning: something can go wrong!
+Log: warning: something happend!
+Log: error: SHUTDOWN!!!

@@ -43,6 +43,7 @@ func TestHandler(t *testing.T) {
 		handler(rr, req)
 
 		res := rr.Result()
+		defer res.Body.Close()
 		if res.StatusCode != test.expectedCode {
 			t.Errorf("expected status %d, got %d", test.expectedCode, res.StatusCode)
 		}
